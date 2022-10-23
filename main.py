@@ -27,7 +27,7 @@ def recording_complete():
     recording_url = request.values['RecordingUrl'] + '.mp3'
 
     filename = request.values['RecordingSid'] + '.mp3'
-    with open('{}/{}'.format("directory/to/download/to", filename), 'wb') as f:
+    with open('{}/{}'.format("static", filename), 'wb') as f:
         f.write(requests.get(recording_url).content)
 
     return str(response)
